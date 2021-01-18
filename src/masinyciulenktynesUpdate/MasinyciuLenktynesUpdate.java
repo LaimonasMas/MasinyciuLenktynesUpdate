@@ -24,8 +24,7 @@ public class MasinyciuLenktynesUpdate {
         boolean doRace = true;
         while (doRace) {
             for (int i = 0; i < race.length; i++) {
-                race[i].vaziuok(100);
-                
+                race[i].vaziuok(100);                
 //                race[i].kelias += (int)(Math.random() * race[i].maxGreitis);
             }
             boolean printInterm = false;
