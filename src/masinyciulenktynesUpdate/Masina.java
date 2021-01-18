@@ -22,9 +22,9 @@ public class Masina {
         this.pav = pav;
         this.maxGreitis = maxGreitis;
         this.kelias = 0;
-        this.greitis = (int)((Math.random()*this.maxGreitis)+1);
-        this.pagreitis = (int)((Math.random()*10)+1);
-        this.stabdymas = (int)((Math.random()*10)+1)/2;
+        this.greitis = 0;
+        this.pagreitis = 0;
+        this.stabdymas = 0;
     }
 
     public String getPav() {
@@ -36,15 +36,20 @@ public class Masina {
     }
 
     public int setGreitis() {
+        if (this.greitis > this.maxGreitis) {
+            this.greitis = this.maxGreitis;
+        } else {
+            this.greitis = (int) ((Math.random() * this.maxGreitis) + 1);
+        };
         return this.greitis;
     }
 
     public int setPagreitis() {
-        return this.pagreitis;
+        return this.pagreitis = (int) ((Math.random() * 10) + 1);
     }
 
     public int setStabdymas() {
-        return this.stabdymas;
+        return this.stabdymas = (int) ((Math.random() * 10) + 1) / 2;
     }
 
     public void vaziuok(int speed) {
