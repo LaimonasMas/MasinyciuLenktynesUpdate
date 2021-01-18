@@ -24,6 +24,7 @@ public class SportineMasina extends Masina {
         }
     }
 
+    @Override
     public void gazuok(int kiek) {
         if (!this.spoileris) {
             super.gazuok(kiek * 2);
@@ -33,6 +34,7 @@ public class SportineMasina extends Masina {
 
     }
 
+    @Override
     public void stabdyk(int kiek) {
         if (this.spoileris) {
             super.stabdyk(kiek * 2);
