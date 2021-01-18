@@ -60,15 +60,19 @@ public class MasinyciuLenktynesUpdate {
         for (int i = 0; i < race.length - 1; i++) {
             for (int j = i + 1; j < race.length; j++) {
                 if (race[i].getKelias() < race[j].getKelias()) {
-                    int tmp = race[i].getKelias();
-                    race[i].kelias = race[j].kelias;
-                    race[j].kelias = tmp;
+//                    int tmp = race[i].getKelias();
+//                    race[i].kelias = race[j].kelias;
+//                    race[j].kelias = tmp;
+                    Masina tmp = race[i];
+                    race[i] = race[j];
+                    race[j] = tmp;
                 }
             }
         }
         for (int i = 0; i < race.length; i++) {
-            System.out.print(race[i].getKelias() + " ");
-            System.out.println(" ");
+//            System.out.print(race[i].getKelias() + " ");
+//            System.out.println(" ");
+System.out.println(race[i]);
         }
     }
 }
