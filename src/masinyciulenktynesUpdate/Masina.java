@@ -12,9 +12,9 @@ package masinyciulenktynesUpdate;
 public class Masina {
 
     protected String pav;
-    public int maxGreitis;
+    protected int maxGreitis;
     protected int kelias = 0;
-    public int greitis;
+    protected int greitis;
     protected int pagreitis;
     protected int stabdymas;
 
