@@ -10,29 +10,64 @@ package masinyciulenktynesUpdate;
  * @author Laimonas
  */
 public class Masina {
-    
-    public String pav;
-    public int maxGreitis;
-    public int kelias = 0;
-    public int greitis;
-    
+
+    protected String pav;
+    protected int maxGreitis;
+    protected int kelias = 0;
+    protected int greitis;
+    protected int pagreitis;
+    protected int stabdymas;
+
     public Masina(String pav, int maxGreitis) {
         this.pav = pav;
         this.maxGreitis = maxGreitis;
         this.kelias = 0;
-        this.greitis = 0;
+        this.greitis = 100;
+        this.pagreitis = 10;
+        this.stabdymas = 5;
     }
-    
-    public void gazuok(int kiek){
-        
+
+    public String getPav() {
+        return this.pav;
     }
-    public void stabdyk(int kiek){
-        
+
+    public int getKelias() {
+        return this.kelias;
     }
-    public int vaziuok(int speed){      
-        return this.kelias += speed;
+
+    public int setGreitis() {
+        return this.greitis;
     }
-   
+
+    public int setPagreitis() {
+        return this.pagreitis;
+    }
+
+    public int setStabdymas() {
+        return this.stabdymas;
+    }
+
+    public void vaziuok(int speed) {
+        this.kelias += speed;
+    }
+
+    public void gazuok(int kiek) {
+        if (Math.random() <= 0.5) {
+            this.kelias += kiek;
+        }
+    }
+
+    public void stabdyk(int kiek) {
+        if (Math.random() <= 0.3) {
+            this.kelias -= kiek;
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "Masina{" + "pavadinimas=" + pav + ", maksimalus greitis=" + maxGreitis + ", nuvažiuotas kelias=" + kelias + '}';
+    }
+
 //    Jei sportine masina
 //    50% kad pasikeis spoilerio pozicija
 //   
@@ -48,9 +83,4 @@ public class Masina {
 //    stabdyk() jei spoileris pakeltas - stabdo 2x greiciau
 //   
 //    spoileris true - pakeltas, false - nuleistas
-    
-    @Override
-    public String toString(){
-        return "Masina{" +"pavadinimas=" + pav + ", maksimalus greitis=" + maxGreitis + ", nuvažiuotas kelias=" + kelias + '}';
-    }
 }

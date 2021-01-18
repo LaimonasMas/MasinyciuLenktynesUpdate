@@ -10,9 +10,35 @@ package masinyciulenktynesUpdate;
  * @author Laimonas
  */
 public class SportineMasina extends Masina {
-    private boolean spoileris = false;
-    public SportineMasina(String pav, int maxGreitis){
+
+    protected boolean spoileris;
+
+    public SportineMasina(String pav, int maxGreitis) {
         super(pav, maxGreitis);
         this.spoileris = false;
-}
+    }
+
+    public void isSpoileris() {
+        if (Math.random() > 0.5) {
+            this.spoileris = true;
+        }
+    }
+
+    public void gazuok(int kiek) {
+        if (!this.spoileris) {
+            super.gazuok(kiek * 2);
+        } else {
+            super.gazuok(kiek);
+        }
+
+    }
+
+    public void stabdyk(int kiek) {
+        if (this.spoileris) {
+            super.stabdyk(kiek * 2);
+        } else {
+            super.stabdyk(kiek);
+        }
+    }
+
 }

@@ -24,31 +24,33 @@ public class MasinyciuLenktynesUpdate {
         boolean doRace = true;
         while (doRace) {
             for (int i = 0; i < race.length; i++) {
-                race[i].vaziuok(100);                
+                race[i].vaziuok(race[i].setGreitis());   
+                race[i].gazuok(race[i].setPagreitis());
+                race[i].stabdyk(race[i].setStabdymas());
 //                race[i].kelias += (int)(Math.random() * race[i].maxGreitis);
             }
             boolean printInterm = false;
             int intermWinner = 0;
             int intermWinnerKm = 0;
             for (int i = 0; i < race.length; i++) {
-                if (race[i].kelias > intermWinnerKm) {
+                if (race[i].getKelias() > intermWinnerKm) {
                     intermWinner = i;
-                    intermWinnerKm = race[i].kelias;
+                    intermWinnerKm = race[i].getKelias();
                 }
-                if (race[i].kelias >= interm) {
+                if (race[i].getKelias() >= interm) {
                     printInterm = true;
                     interm += 100;
                 }
             }
             if (printInterm) {
                 for (int i = 0; i < race.length; i++) {
-                    System.out.print(race[i].kelias + "\t");
+                    System.out.print(race[i].getKelias() + "\t");
                 }
                 System.out.println();
-                System.out.println("Pirmauja " + race[intermWinner].pav + " nuvaziavo " + intermWinnerKm);
+                System.out.println("Pirmauja " + race[intermWinner].getPav() + " nuvaziavo " + intermWinnerKm);
             }
             for (int i = 0; i < race.length; i++) {
-                if (race[i].kelias >= 1000) {
+                if (race[i].getKelias() >= 1000) {
 //                    System.out.println("Laimejo " + (i + 1) + " masina");
                     doRace = false;
                     break;
@@ -57,15 +59,15 @@ public class MasinyciuLenktynesUpdate {
         }
         for (int i = 0; i < race.length - 1; i++) {
             for (int j = i + 1; j < race.length; j++) {
-                if (race[i].kelias < race[j].kelias) {
-                    int tmp = race[i].kelias;
+                if (race[i].getKelias() < race[j].getKelias()) {
+                    int tmp = race[i].getKelias();
                     race[i].kelias = race[j].kelias;
                     race[j].kelias = tmp;
                 }
             }
         }
         for (int i = 0; i < race.length; i++) {
-            System.out.print(race[i].kelias + " ");
+            System.out.print(race[i].getKelias() + " ");
             System.out.println(" ");
         }
     }
