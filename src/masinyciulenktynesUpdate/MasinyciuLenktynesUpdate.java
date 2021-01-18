@@ -17,6 +17,7 @@ public class MasinyciuLenktynesUpdate {
             Masina sm7 = new SportineMasina("Sportine3", 300);
             Masina sm8 = new SportineMasina("Sportine4", 300);
         Masina[] race = {m1, m2, m3, m4, sm5, sm6, sm7, sm8};
+        System.out.println((int)((Math.random()*10)+1)/2);
 //        int tempSpeed = (int)(Math.random() * 100 * 1);
 //        System.out.println(tempSpeed);
 //        int[] masinos = new int[8];

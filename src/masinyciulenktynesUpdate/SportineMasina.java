@@ -31,7 +31,6 @@ public class SportineMasina extends Masina {
         } else {
             super.gazuok(kiek);
         }
-
     }
 
     @Override

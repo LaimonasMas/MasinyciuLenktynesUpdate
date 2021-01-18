@@ -12,9 +12,9 @@ package masinyciulenktynesUpdate;
 public class Masina {
 
     protected String pav;
-    protected int maxGreitis;
+    public int maxGreitis;
     protected int kelias = 0;
-    protected int greitis;
+    public int greitis;
     protected int pagreitis;
     protected int stabdymas;
 
@@ -22,9 +22,9 @@ public class Masina {
         this.pav = pav;
         this.maxGreitis = maxGreitis;
         this.kelias = 0;
-        this.greitis = 100;
-        this.pagreitis = 10;
-        this.stabdymas = 5;
+        this.greitis = (int)((Math.random()*this.maxGreitis)+1);
+        this.pagreitis = (int)((Math.random()*10)+1);
+        this.stabdymas = (int)((Math.random()*10)+1)/2;
     }
 
     public String getPav() {
