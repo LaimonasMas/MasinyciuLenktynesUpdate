@@ -47,7 +47,7 @@ public class MasinyciuLenktynesUpdate {
                     System.out.print(race[i].getKelias() + "\t");
                 }
                 System.out.println();
-                System.out.println("Pirmauja " + race[intermWinner].getPav() + " nuvaziavo " + intermWinnerKm);
+                System.out.println("Pirmauja " + race[intermWinner]);
             }
             for (int i = 0; i < race.length; i++) {
                 if (race[i].getKelias() >= 1000) {
